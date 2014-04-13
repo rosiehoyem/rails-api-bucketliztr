@@ -3,6 +3,14 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'fdoc'
+
+Fdoc.service_path = "docs/fdocs"
+
+# Configure how Fdoc decides a successful response
+Fdoc.decide_success_with do |response, status|
+ status.to_i < 400
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

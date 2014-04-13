@@ -8,6 +8,7 @@ gem 'active_model_serializers'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'fdoc'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.14.0"
